@@ -1,11 +1,22 @@
 public class Node {
     Node node_left, node_right;
     int value;
+    int height;
 
     public Node(int newValue) {
         value = newValue;
+        height = 1;
         node_left = node_right = null;
     }
+
+    private int height(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        return node.height;
+    }
+
+
     public void insertValue(int newValue){
         if (newValue< value){ //evaluation to check if there is a value on the left side of the tree already
           if (node_left==null){
